@@ -1,24 +1,24 @@
-h1 {
+* {
     text-align: center;
 }
 
-.board {
-    width: 90%;
-    margin: 0 auto;
-}
-
-.row {
-    width: 100%;
-    background-color: white;
-}
-
 .tile {
-    height: 20vh;
-    width: 32%;
     display: inline-block;
+    height: 25vh;
+    width: 30%;
+    margin: 0 3px;
     border: 1px solid black;
 }
 
 .tile:hover {
     background-color: darkgray;
+}
+
+
+
+/* resize tiles */
+@media (max-width: 600px) {
+    .tile {
+        height: 20vh;
+    }
 }
