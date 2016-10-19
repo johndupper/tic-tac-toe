@@ -2,6 +2,10 @@
     text-align: center;
 }
 
+button {
+    margin-bottom: 1em;
+}
+
 .tile {
     display: inline-block;
     height: 25vh;
@@ -11,7 +15,7 @@
 }
 
 .tile:hover {
-    background-color: darkgray;
+    background-color: gray;
 }
 
 
