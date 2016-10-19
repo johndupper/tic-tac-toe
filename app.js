@@ -1,7 +1,8 @@
-// allow alerts:
-/*jslint devel: true */
 
-
+function ChangeColor() {
+    'use strict';
+    this.style.backgroundColor = 'yellow';
+}
 
 
 // create game
@@ -12,12 +13,8 @@ var createBoard = function () {
     for (index = 0; index < 9; index += 1) {
         square = document.createElement('div');
         square.className = 'tile';
-
         // tile events
-        square.addEventListener('click', function () {
-            this.style.backgroundColor = 'yellow';
-        });
-
+        square.addEventListener('click', ChangeColor);
         gameContainer.appendChild(square);
     }
 };
