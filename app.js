@@ -1,21 +1,25 @@
 // set counter
 var playerTurn = 0;
-var playerOne, playerTwo = [];
-var win = [1, 2, 3];
-var win2 = [1, 2, 3];
+var chosenSquare;
+var playerOne = [];
+var playerTwo = [];
+var console;
 
-// check for winner
-function checkForWinner() {
+
+
+function winner() {
     'use strict';
-    
+    console.log(playerOne, playerTwo);
 }
+
 
 // playing the game (constructor)
 function GameLogic() {
     'use strict';
-    var chosenSquare = parseInt(this.id, 10);
+    chosenSquare = parseInt(this.id, 10);
     if (this.classList.contains('free')) {
         this.classList.remove('free');
+        
         if (playerTurn % 2 === 0) {
             this.style.backgroundColor = 'blue';
             playerOne.push(chosenSquare);
@@ -25,8 +29,10 @@ function GameLogic() {
         }
         playerTurn += 1;
         chosenSquare = 0;
+        playerOne.sort();
+        playerTwo.sort();
     }
-    checkForWinner();
+    winner();
 }
 
 // create game
