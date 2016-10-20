@@ -1,15 +1,15 @@
-// set counter
 var playerTurn = 0;
 var chosenSquare;
 var playerOne = [];
 var playerTwo = [];
-var console;
+var wins = [[1, 2, 3], [4, 5, 6], [7, 8, 9],
+            [1, 4, 7], [2, 5, 8], [3, 6, 9],
+            [1, 5, 9], [3, 5, 7]];
 
 
-
-function winner() {
+// win or tie
+function declareWinner(blueArray, redArray) {
     'use strict';
-    console.log(playerOne, playerTwo);
 }
 
 
@@ -19,7 +19,6 @@ function GameLogic() {
     chosenSquare = parseInt(this.id, 10);
     if (this.classList.contains('free')) {
         this.classList.remove('free');
-        
         if (playerTurn % 2 === 0) {
             this.style.backgroundColor = 'blue';
             playerOne.push(chosenSquare);
@@ -32,8 +31,11 @@ function GameLogic() {
         playerOne.sort();
         playerTwo.sort();
     }
-    winner();
+    if (playerTurn >= 5) {
+        declareWinner(playerOne, playerTwo);
+    }
 }
+
 
 // create game
 var gameContainer = document.getElementById('board');

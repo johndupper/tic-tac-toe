@@ -14,8 +14,6 @@
     background-color: gray;
 }
 
-
-/* resize tiles */
 @media (max-width: 600px) {
     .tile {
         height: 20vh;
