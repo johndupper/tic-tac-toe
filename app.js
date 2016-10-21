@@ -13,12 +13,23 @@ function declareWinner(blueArray, redArray) {
     
     for (index = 0; index < wins.length; index += 1) {
         
-        if (playerOne.toString() === wins[index].toString()) {
-            alert('winner');
+        var playerOneCount = 0
+        for (var indexPlayerOne = 0; indexPlayerOne < playerOne.length; indexPlayerOne += 1) {
+            if (wins[index].indexOf(playerOne[indexPlayerOne]) > -1) {
+                playerOneCount++;
+            }
         }
-        
-        if (playerTwo.toString() === wins[index].toString()) {
+
+        var playerTwoCount = 0
+        for (var indexPlayerTwo = 0; indexPlayerTwo < playerTwo.length; indexPlayerTwo += 1) {
+            if (wins[index].indexOf(playerTwo[indexPlayerTwo]) > -1) {
+                arrayCount++;
+            }
+        }
+
+        if (playerOneCount == 3 || playerTwoCount == 3) {
             alert('winner');
+            break;
         }
     }
 }
