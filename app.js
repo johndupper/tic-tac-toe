@@ -1,8 +1,9 @@
 var playerTurn = 0;
 var playerOne = [];
 var playerTwo = [];
-var wins = [[1, 5, 9], [3, 5, 7], [1, 2, 3], [4, 5, 6], [7, 8, 9],
-            [1, 4, 7], [2, 5, 8], [3, 6, 9]];
+var wins = [[1, 2, 3], [4, 5, 6], [7, 8, 9],
+            [1, 4, 7], [2, 5, 8], [3, 6, 9],
+            [1, 5, 9], [3, 5, 7]];
 var alert;
 
 // win or tie
@@ -15,6 +16,7 @@ function declareWinner(blueArray, redArray) {
         if (playerOne.toString() === wins[index].toString()) {
             alert('winner');
         }
+        
         if (playerTwo.toString() === wins[index].toString()) {
             alert('winner');
         }
@@ -42,10 +44,9 @@ function GameLogic() {
         playerTurn += 1;
         chosenSquare = 0;
     }
+    
     if (playerTurn >= 5) {
-        playerOne.sort();
-        playerTwo.sort();
-        declareWinner(playerOne, playerTwo);
+        declareWinner(playerOne.sort(), playerTwo.sort());
     }
 }
 
