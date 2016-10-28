@@ -10,7 +10,7 @@
     border: 1px solid black;
 }
 
-.tile:hover {
+.free:hover {
     background-color: gray;
 }
 
